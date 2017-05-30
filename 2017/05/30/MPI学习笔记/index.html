@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.4 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            MPI学习笔记 | 
+        
+        Dragon
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Mr.車">
+    <meta name="description" content="null">
+    <meta name="keywords" content="null">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo.png">
+    <link rel="icon" sizes="192x192" href="/img/logo.png">
+    <link rel="apple-touch-icon" href="/img/logo.jpg">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Dragon">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="MPI学习笔记 | Dragon">
+    <meta property="og:description" content="null">
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.jpg);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 100ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MP函数约定"><span class="post-toc-number">1.</span> <span class="post-toc-text">MP函数约定</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6个基本的MPI函数"><span class="post-toc-number">2.</span> <span class="post-toc-text">6个基本的MPI函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MPI初始化"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">MPI初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MPI结束"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">MPI结束</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取进程"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">获取进程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通信子（通信空间）"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">通信子（通信空间）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#消息传递"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">消息传递</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概念简析"><span class="post-toc-number">3.</span> <span class="post-toc-text">概念简析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Point-to-Point（点到点通信）"><span class="post-toc-number">4.</span> <span class="post-toc-text">Point to Point（点到点通信）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#术语解析"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">术语解析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#消息标识"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">消息标识</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#消息匹配"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">消息匹配</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#status参数"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">status参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Greeting例子"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">Greeting例子</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MPI-Sendrecv函数"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">MPI_Sendrecv函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#空进程"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">空进程</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通信模式"><span class="post-toc-number">5.</span> <span class="post-toc-text">通信模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#阻塞通信模式"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">阻塞通信模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#标准模式Standard"><span class="post-toc-number">5.1.1.</span> <span class="post-toc-text">标准模式Standard</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#缓冲模式Buffer"><span class="post-toc-number">5.1.2.</span> <span class="post-toc-text">缓冲模式Buffer</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#同步模式Synchronous"><span class="post-toc-number">5.1.3.</span> <span class="post-toc-text">同步模式Synchronous</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#就绪模式Ready"><span class="post-toc-number">5.1.4.</span> <span class="post-toc-text">就绪模式Ready</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#阻塞与非阻塞的差别"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">阻塞与非阻塞的差别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#非阻塞发送与接收"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">非阻塞发送与接收</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通信的完成"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">通信的完成</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#消息探测"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">消息探测</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MPI程序的编译"><span class="post-toc-number">6.</span> <span class="post-toc-text">MPI程序的编译</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本执行方法"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">基本执行方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通过配置文件执行"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">通过配置文件执行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#完整的MPI运行方式"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">完整的MPI运行方式</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 20 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                MPI学习笔记
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Mr.車</strong>
+        <span>5月 30, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=MPI学习笔记&url=http://yoursite.com//2017/05/30/MPI学习笔记/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=MPI学习笔记&url=http://yoursite.com//2017/05/30/MPI学习笔记/index.html&via=Mr.車" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//2017/05/30/MPI学习笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2017/05/30/MPI学习笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="MP函数约定"><a href="#MP函数约定" class="headerlink" title="MP函数约定"></a>MP函数约定</h2><p>C中的MPI函数约定</p>
+<ol>
+<li>必须包含mpi.h</li>
+<li>MPI函数返回出错代码或MPI_SUCCESS成功标志</li>
+<li>MPI-前缀，且只有MPI和MPI_标志后的第一个字母大写，其余小写</li>
+</ol>
+<hr>
+<h2 id="6个基本的MPI函数"><a href="#6个基本的MPI函数" class="headerlink" title="6个基本的MPI函数"></a>6个基本的MPI函数</h2><h3 id="MPI初始化"><a href="#MPI初始化" class="headerlink" title="MPI初始化"></a>MPI初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int MPI_iNIT(int *argc, char **argv[])</div></pre></td></tr></table></figure>
+<ol>
+<li>MPI_INIT是MPI程序的第一个调用，它完成MPI程序的所有初始化工作。所有的MPI程序的第一条可执行语句都是这条语句</li>
+<li>启动MPI环境,标志并行代码的开始</li>
+<li>并行代码之前,第一个mpi函数(除MPI_Initialize()外).</li>
+<li>要求main必须带参数运行,否则出错.</li>
+</ol>
+<hr>
+<h3 id="MPI结束"><a href="#MPI结束" class="headerlink" title="MPI结束"></a>MPI结束</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int MPI_Finalize</div></pre></td></tr></table></figure>
+<ol>
+<li>MPI_FINALIZE是MPI程序的最后一个调用，它结束MPI程序的运行，它是MPI程序的最后一条可执行语句，否则程序的运行结果是不可预知的。</li>
+<li>标志并行代码的结束,结束除主进程外其它进程.</li>
+<li>之后串行代码仍可在主进程(rank = 0)上运行(如果必须)</li>
+</ol>
+<hr>
+<h3 id="获取进程"><a href="#获取进程" class="headerlink" title="获取进程"></a>获取进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/*用MPI_Comm_size 获得进程个数 p*/</div><div class="line">int MPI_Comm_size(MPI_Comm comm, int *size)</div><div class="line"></div><div class="line">/*用MPI_Comm_rank 获得进程的一个叫rank的值,</div><div class="line">该rank值为0到p-1间的整数,相当于进程的ID*/</div><div class="line">int MPI_Comm_rank(MPI_Comm comm, int *rank)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="通信子（通信空间）"><a href="#通信子（通信空间）" class="headerlink" title="通信子（通信空间）"></a>通信子（通信空间）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">MPI_COMM_WORLD</div></pre></td></tr></table></figure>
+<ol>
+<li>一个通信空间是一个进程组和一个上下文的组合.上下文可看作为组的超级标签,用于区分不同的通信子. </li>
+<li>在执行函数MPI_Init之后,一个MPI程序的所有进程形成一个缺省的组,这个组的通信子即被写作MPI_COMM_WORLD.</li>
+<li>该参数是MPI通信操作函数中必不可少的参数,用于限定参加通信的进程的范围.</li>
+</ol>
+<hr>
+<h3 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">int MPI_Send(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm);</div><div class="line">/**消息发送</div><div class="line">*IN buf 发送缓冲区的起始地址</div><div class="line">*IN count 要发送信息的元素个数</div><div class="line">*IN datatype 发送信息的数据类型</div><div class="line">*IN dest 目标进程的rank值</div><div class="line">*IN tag 消息标签</div><div class="line">*IN comm 通信子</div><div class="line">*/</div><div class="line"></div><div class="line">int MPI_Recv(void* buf, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm comm, MPI_Status *status);</div><div class="line">/**消息接收</div><div class="line">*OUT buf 发送缓冲区的起始地址</div><div class="line">*IN count 要发送信息的元素个数</div><div class="line">*IN datatype 发送信息的数据类型</div><div class="line">*IN dest 目标进程的rank值</div><div class="line">*IN tag 消息标签</div><div class="line">*IN comm 通信子</div><div class="line">*OUT status status对象,包含实际接收到的消息的有关信息</div><div class="line">*/</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="概念简析"><a href="#概念简析" class="headerlink" title="概念简析"></a>概念简析</h2><blockquote>
+<p><strong><em>group</em></strong>是MPI一个很重要的概念，一台电脑可以属于多个group，group的正真强大体现在可以随时随地的组合任意group，然后利用gourp内，和group间的communicator，可以很容易实现复杂科学计算的中间过程，比如奇数rank一个group，偶数另一个group，或者拓扑结构的group，这样可以解决很多复杂问题，另外MPI还有一个默认的全局的group，他就是comm world，一般简单的应用有了这一个group已经足够了。</p>
+<p><strong><em>rank</em></strong>就是任意group内的一个计算单元，利用rank我们可以很轻松的实现client server的架构，比如rank＝0是server其他就是client。</p>
+<p><strong><em>communicator</em></strong>就是各种通信，比如一对一，一对多，多对一，其中多往往代表着一个group, 在传输过程中tag还是很有用的可以用来区别不同的任务类型，一般都是先解析tag，然后再解析具体的数据内容， 这里要有一个信封和信内容的差别的概念，理解了这样的差别，可以很好的扩展程序。</p>
+<p><strong><em>type</em></strong>是MPI的自定义类型，由于通常编程的时候常用struct 数组 和离散的变量，这些东西不能直接进行通信， 然后MPI同样有一套这样的定义，我们可以转化成MPI的格式，这样就可以很自由的通信了。</p>
+<p><strong><em>Pack</em></strong>就是把离散的数据打包起来，方便传送，其实这个作用和type很类似，如果你不想很麻烦的定义type直接打包发送</p>
+<p><strong><em>spawn</em></strong>是区分MPI一代和二代的一个重要的标志，有了spawn，就可以在运行过程中自动的改变process的数量，可能复杂的软件才有这样的需求。</p>
+<p><strong><em>window</em></strong>远程的控制同一个文件，只有在网络条件很好的时候用这个才有意义，否则会让软件效率变得很糟糕。</p>
+</blockquote>
+<hr>
+<h2 id="Point-to-Point（点到点通信）"><a href="#Point-to-Point（点到点通信）" class="headerlink" title="Point to Point（点到点通信）"></a>Point to Point（点到点通信）</h2><h3 id="术语解析"><a href="#术语解析" class="headerlink" title="术语解析"></a>术语解析</h3><blockquote>
+<p><strong>Blocking(阻塞)</strong> :一个例程须等待操作完成才返回,返回后用户可以重新使用调用中所占用的资源.<br><strong>Non-blocking(非阻塞)</strong>:一个例程不必等待操作完成便可返回,但这并不意味着所占用的资源可被重用.<br><strong>Local(本地)</strong>:不通信.<br><strong>Non-local(非本地)</strong>:通信.</p>
+</blockquote>
+<hr>
+<h3 id="消息标识"><a href="#消息标识" class="headerlink" title="消息标识"></a>消息标识</h3><blockquote>
+<ul>
+<li>[x] MPI标识一条消息的信息包含四个域:<ul>
+<li>[x] Source: 发送进程隐式确定,由进程的rank值唯一标识</li>
+<li>[x] Destination: Send函数参数确定</li>
+<li>[x] Tag: Send函数参数确定,(0,UB),UB:MPI_TAG_UB&gt;=32767.</li>
+<li>[x] Communicator: 缺省MPI_COMM_WORLD<ul>
+<li>[x] Group:有限/N，有序/Rank [0,1,2,…N-1]</li>
+<li>[x] Contex:Super_tag,用于标识该通讯空间.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[x] 数据类型<ul>
+<li>[x] 异构计算:数据转换.</li>
+<li>[x] 派生数据类型:结构或数组散元传送</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="消息匹配"><a href="#消息匹配" class="headerlink" title="消息匹配"></a>消息匹配</h3><p>接收buffer必须至少可以容纳count个由datatype参数指明类型的数据. 如果接收buf太小, 将导致溢出、出错</p>
+<ol>
+<li>参数匹配 dest,tag,comm/ source,tag,comm</li>
+<li>Source == MPI_ANY_SOURCE：接收任意处理器来的数据(任意消息来源).</li>
+<li><p>Tag == MPI_ANY_TAG：匹配任意tag值的消息(任意tag消息).</p>
+<blockquote>
+<p>在阻塞式消息传送中不允许Source==Dest,否则会导致deadlock.<br>消息传送被限制在同一个communicator.<br>在send函数中必须指定唯一的接收者(Push/pull通讯机制).</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<h3 id="status参数"><a href="#status参数" class="headerlink" title="status参数"></a>status参数</h3><ul>
+<li><p>当使用MPI_ANY_SOURCE或/和MPI_ANY_TAG接收消息时如何确定消息的来源source 和 tag值呢？<br>在C中,可以用<code>status.MPI_SOURCE</code>, <code>status.MPI_TAG</code></p>
+</li>
+<li><p>Status还可用于返回实际接收到消息的长度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">int MPI_Get_count(MPI_Status status,MPI_Datatype datatype,int* count)</div><div class="line">/**</div><div class="line">*IN status 接收操作的返回值.</div><div class="line">*IN datatype 接收缓冲区中元素的数据类型.</div><div class="line">*OUT count 接收消息中的元素个数</div><div class="line">*/</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="Greeting例子"><a href="#Greeting例子" class="headerlink" title="Greeting例子"></a>Greeting例子</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"mpi.h"</span></span></div><div class="line">main(<span class="keyword">int</span> argc,<span class="keyword">char</span>*argv[])</div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> numprocs;      <span class="comment">/*进程数,该变量为各处理器中的同名变量, 存储是分布的 **/</span></div><div class="line">    <span class="keyword">int</span> myid;          <span class="comment">/*我的进程ID,存储也是分布的*/</span></div><div class="line">    <span class="keyword">int</span> source;        </div><div class="line">    MPI_Status status; <span class="comment">/*消息接收状态变量,存储也是分布的*/</span></div><div class="line">    <span class="keyword">char</span> message[<span class="number">100</span>]; <span class="comment">/*消息buffer,存储也是分布的*/</span></div><div class="line"></div><div class="line">    <span class="comment">/*初始化MPI*/</span></div><div class="line">    MPI_Init(&amp;argc,&amp;argv);</div><div class="line">    <span class="comment">/*该函数被各进程各调用一次,得到自己的进程rank值*/</span></div><div class="line">    MPI_Comm_rank(MPI_COMM_WORLD,&amp;myid);</div><div class="line">    <span class="comment">/*该函数被各进程各调用一次,得到进程数*/</span></div><div class="line">    MPI_Comm_size(MPI_COMM_WORLD,&amp;numprocs);</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(myid !=<span class="number">0</span>)&#123;</div><div class="line">        <span class="comment">/*建立消息*/</span></div><div class="line">        <span class="built_in">sprintf</span>(message, <span class="string">"Greetings from process %d!"</span>,myid); </div><div class="line">        <span class="comment">/* 发送长度取strlen(message)+1,使\0也一同发送出去*/</span></div><div class="line">        MPI_Send(message, <span class="built_in">strlen</span>(message)+<span class="number">1</span>, MPI_CHAR, <span class="number">0</span>, <span class="number">99</span>, MPI_COMM_WORLD);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">         <span class="keyword">for</span>(source = <span class="number">1</span>; source &lt; numprocs; source++)&#123;</div><div class="line">            MPI_Recv(message, <span class="number">100</span>, MPI_CHAR, source, <span class="number">99</span>, MPI_COMM_WORLD, &amp;status);</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,message);</div><div class="line">        &#125;<span class="comment">/*end for*/</span></div><div class="line">    &#125;<span class="comment">/*end if*/</span></div><div class="line"></div><div class="line">    <span class="comment">/*关闭MPI,标志并行代码段的结束*/</span></div><div class="line">    MPI_Finalize();</div><div class="line">&#125;<span class="comment">/*end main*/</span></div></pre></td></tr></table></figure>
+<hr>
+<h3 id="MPI-Sendrecv函数"><a href="#MPI-Sendrecv函数" class="headerlink" title="MPI_Sendrecv函数"></a>MPI_Sendrecv函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">/*函数原型*/</div><div class="line">int MPI_Sendrecv(</div><div class="line">void *sendbuf,</div><div class="line">int sendcount,</div><div class="line">MPI_Datatype sendtype,</div><div class="line">int dest,</div><div class="line">int sendtag,</div><div class="line">void *recvbuf,</div><div class="line">int recvcount,</div><div class="line">MPI_Datatype recvtype,</div><div class="line">int source,</div><div class="line">int recvtag,</div><div class="line">MPI_Comm comm,</div><div class="line">MPI_Status *status)</div><div class="line"></div><div class="line">/*用法*/</div><div class="line"></div><div class="line">.../*略*/</div><div class="line">int a,b;</div><div class="line">.../*略*/</div><div class="line">MPI_Status status;</div><div class="line">int dest = (rank+1)%p;</div><div class="line">int source = (rank + p -1)%p; /*p为进程个数*/</div><div class="line">/*该函数被每一进程执行一次*/</div><div class="line">MPI_Sendrecv( &amp;a, 1, MPI_INT, dest, 99, &amp;b 1,MPI_INT, source, 99, MPI_COMM_WORLD, &amp;status);</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="空进程"><a href="#空进程" class="headerlink" title="空进程"></a>空进程</h3><blockquote>
+<p><code>rank = MPI_PROC_NULL</code>的进程称为空进程<br>使用空进程的通信不做任何操作<br>向MPI_PROC_NULL发送的操作总是成功并立即返回.<br>从MPI_PROC_NULL接收的操作总是成功并立即返回，且接收缓冲区内容为随机数</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">/*status*/</div><div class="line">status.MPI_SOURCE = MPI_PROC_NULL</div><div class="line">status.MPI_TAG = MPI_ANY_TAG</div><div class="line">MPI_Get_count(&amp;status,MPI_Datatype datatype, &amp;count) =&gt;count = 0</div><div class="line"></div><div class="line">/*空进程应用示意*/</div><div class="line">MPI_Status status;</div><div class="line">int dest = (rank+1) % p;</div><div class="line">int source = (rank + p-1) % p;</div><div class="line">if(source == p-1) </div><div class="line">    source = MPI_PROC_NULL;</div><div class="line">if(dest == 0) </div><div class="line">    dest = MPI_PROC_NULL;</div><div class="line"></div><div class="line">MPI_Sendrecv( &amp;a, 1, MPI_INT, dest, 99, &amp;b 1, MPI_INT, source, 99, MPI_COMM_WORLD, &amp;status);</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="通信模式"><a href="#通信模式" class="headerlink" title="通信模式"></a>通信模式</h2><h3 id="阻塞通信模式"><a href="#阻塞通信模式" class="headerlink" title="阻塞通信模式"></a>阻塞通信模式</h3><p>由<strong>发送方</strong>体现（send语句）<br><strong>阻塞通信中接收语句相同，MPI_Recv</strong><br>按发送方式的不同，消息或直接被copy到接收者的buffer中或被拷贝到系统buffer中。 </p>
+<blockquote>
+<ul>
+<li>标准模式Standard<ul>
+<li>最常用的发送方法MPI_Send()</li>
+</ul>
+</li>
+<li>B:缓冲模式Buffer<ul>
+<li>发送到系统缓冲区 </li>
+<li>MPI_Bsend()</li>
+</ul>
+</li>
+<li>S:同步模式Synchronous<ul>
+<li>任意发出，不需系统缓冲区</li>
+<li>MPI_Ssend()</li>
+</ul>
+</li>
+<li>R:就绪模式Ready<ul>
+<li>就绪发出，不需系统缓冲区</li>
+<li>MPI_Rsend()</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="标准模式Standard"><a href="#标准模式Standard" class="headerlink" title="标准模式Standard"></a>标准模式Standard</h4><p>直接送信或者通过邮局送信</p>
+<blockquote>
+<ul>
+<li><strong>由MPI决定是否缓冲信息</strong><ol>
+<li>没有足够的系统缓冲区时或出于性能的考虑，MPI可能进行直接拷贝：<strong>仅当相应的接收开始后，发送语句才能返回</strong></li>
+<li>MPI缓冲消息：发送语句地相应的接收语句完成前返回</li>
+</ol>
+</li>
+<li><strong>发送的结束 == 消息已从发送方发出</strong>，而不是滞留在发送方的系统缓冲区中</li>
+<li>非本地的：发送操作的成功与否依赖于接收操作</li>
+<li>最常用的发送方式</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="缓冲模式Buffer"><a href="#缓冲模式Buffer" class="headerlink" title="缓冲模式Buffer"></a>缓冲模式Buffer</h4><p>通过邮局送信（应用系统缓冲区）</p>
+<blockquote>
+<ul>
+<li>前提： : 用户显示地指定用于缓冲消息的系统缓冲区<ul>
+<li><code>MPI_Buffer_attach(*buffer, *size)</code></li>
+</ul>
+</li>
+<li>发送是本地的: 完成不依赖于与其匹配的接收操作。<strong>发送的结束仅表明消息进入系统的缓冲区中</strong>，发送方缓冲区可以重用，而对接收方的情况并不知道</li>
+<li>缓冲模式在相匹配的接收未开始的情况下，总是将送出的消息放在缓冲区内，这样发送者可以很快地继续计算,然后由系统处理放在缓冲区中的消息</li>
+<li>占用内存，一次内存拷贝。</li>
+<li>其函数调用形式为：<code>MPI_Bsend(…)</code>B代表缓冲</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="同步模式Synchronous"><a href="#同步模式Synchronous" class="headerlink" title="同步模式Synchronous"></a>同步模式Synchronous</h4><p>握手后才送出名片（遵从three-way协议）</p>
+<blockquote>
+<ul>
+<li>本质特征：收方接收该消息的缓冲区已准备好，<strong>不需要附加的系统缓冲区</strong></li>
+<li>任意发出：发送请求可以不依赖于收方的匹配的接收请求而任意发出</li>
+<li>成功结束：<strong>仅当收方已发出接收该消息的请求后才成功返回</strong>，否则将阻塞。意味着<ul>
+<li>发送方缓冲区可以重用</li>
+<li>收方已发出接收请求</li>
+</ul>
+</li>
+<li>是非本地的</li>
+<li>其函数调用形式为：<code>MPI_Ssend(…)</code>S代表同步</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="就绪模式Ready"><a href="#就绪模式Ready" class="headerlink" title="就绪模式Ready"></a>就绪模式Ready</h4><p>有客户请求,才提供服务</p>
+<blockquote>
+<ul>
+<li>发送请求仅当有匹配的接收后才能发出，否则出错。在就绪模式下，系统默认与其相匹配的接收已经调用。<strong>接收必须先于发送</strong></li>
+<li>它不可以不依赖于接收方的匹配的接收请求而任意发出</li>
+<li>其函数调用形式为：<code>MPI_Rsend(…)</code>。R代表准备</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="阻塞与非阻塞的差别"><a href="#阻塞与非阻塞的差别" class="headerlink" title="阻塞与非阻塞的差别"></a>阻塞与非阻塞的差别</h3><blockquote>
+<ul>
+<li>用户发送缓冲区的重用<ul>
+<li>非阻塞的发送：仅当调用了有关结束该发送的语句后才能重用发送缓冲区，否则将导致错误；对于接收方，与此相同，仅当确认该接收请求已完成后才能使用。<strong>所以对于非阻塞操作，要先调用等待<code>MPI_Wait()</code>或测试<code>MPI_Test()</code>函数来结束或判断该请求，然后再向缓冲区中写入新内容或读取新内容</strong></li>
+</ul>
+</li>
+<li>阻塞发送将发生阻塞,直到通讯完成</li>
+<li>非阻塞可将通讯交由后台处理，通信与计算可重叠</li>
+<li>发送语句的前缀由<code>MPI_</code>改为<code>MPI_I</code>, <code>I:immediate</code>:<ul>
+<li>标准模式:<code>MPI_Send(…)</code>-&gt;<code>MPI_Isend(…)</code></li>
+<li>Buffer模式:<code>MPI_Bsend(…)</code>-&gt;<code>MPI_Ibsend(…)</code></li>
+<li>Synchronous模式:<code>MPI_Ssend(…)</code>-&gt;<code>MPI_Issend(…)</code></li>
+<li>Ready模式:<code>MPI_Rsend(…)</code>-&gt;<code>MPI_Irsend(…)</code></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="非阻塞发送与接收"><a href="#非阻塞发送与接收" class="headerlink" title="非阻塞发送与接收"></a>非阻塞发送与接收</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">int MPI_Isend(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm, MPI_Request *request)</div><div class="line">/**</div><div class="line">` IN buf 发送缓冲区的起始地址</div><div class="line">` IN count 发送缓冲区的大小(发送元素个数)</div><div class="line">` IN datatype 发送缓冲区数据的数据类型</div><div class="line">` IN dest 目的进程的秩</div><div class="line">` IN tag 消息标签</div><div class="line">` IN comm 通信空间/通信子</div><div class="line">` OUT request 非阻塞通信完成对象(句柄)</div><div class="line">*/</div><div class="line"></div><div class="line">/*MPI_Ibsend/MPI_Issend/MPI_Irsend:非阻塞缓冲模式/非阻塞同步模式/非阻塞就绪模式*/</div><div class="line"></div><div class="line">int MPI_Irecv(void* buf, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm comm, MPI_Request* request)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="通信的完成"><a href="#通信的完成" class="headerlink" title="通信的完成"></a>通信的完成</h3><p>常用于非阻塞通信</p>
+<ul>
+<li>发送的完成: 代表发送缓冲区中的数据已送出，发送缓冲区可以重用。它并不代表数据已被接收方接收。数据有可能被缓冲;<ul>
+<li>同步模式：发送完成==接收方已初始化接收，数据将被接收方接收</li>
+</ul>
+</li>
+<li>接收的完成:代表数据已经写入接收缓冲区。接收者可访问接收缓冲区，status对象已被释放。它并不代表相应的发送操作已结束。</li>
+<li>通过MPI_Wait()和MPI_Test()来判断通信是否已经完成;</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">####MPI_Wait()</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">MPI_Wait</span><span class="params">(MPI_Request* request, MPI_Status * status)</span></span>;</div><div class="line"><span class="comment">/*当request标识的通信结束后，MPI_Wait()才返回。如果通信是非阻塞的，返回时request = MPI_REQUEST_NULL;函数调用是非本地的;*/</span></div><div class="line"></div><div class="line">MPI_Request request;</div><div class="line">MPI_Status status;</div><div class="line"><span class="keyword">int</span> x, y;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(rank == <span class="number">0</span>)&#123;</div><div class="line">    MPI_Isend(&amp;x, <span class="number">1</span>, MPI_INT, <span class="number">1</span>, <span class="number">99</span>, comm, &amp;request)</div><div class="line">    …</div><div class="line">    MPI_Wait(&amp;request, &amp;status);</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    MPI_Irecv(&amp;y, <span class="number">1</span>, MPI_INT, <span class="number">0</span>, <span class="number">99</span>, comm, &amp;request)</div><div class="line">    …</div><div class="line">    MPI_Wait(&amp;request, &amp;status);</div><div class="line">&#125;</div><div class="line"></div><div class="line">####<span class="function">MPI_Test</span></div><div class="line"><span class="keyword">int</span> <span class="title">MPI_Test</span><span class="params">(MPI_Request *request,<span class="keyword">int</span> *flag, MPI_Status *status)</span>;</div><div class="line"></div><div class="line">MPI_Request request;</div><div class="line">MPI_Status status;</div><div class="line"><span class="keyword">int</span> x, y, flag;</div><div class="line"><span class="keyword">if</span>(rank == <span class="number">0</span>)&#123;</div><div class="line">    MPI_Isend(&amp;x, <span class="number">1</span>, MPI_INT, <span class="number">1</span>, <span class="number">99</span>, comm, &amp;request)</div><div class="line">    <span class="keyword">while</span>(!flag)</div><div class="line">        MPI_Test(&amp;request, &amp;flag, &amp;status);</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    MPI_Irecv(&amp;y, <span class="number">1</span>, MPI_INT, <span class="number">0</span>, <span class="number">99</span>, comm, &amp;request)</div><div class="line">    <span class="keyword">while</span>(!flag)</div><div class="line">        MPI_Test(&amp;request, &amp;flag, &amp;status);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="消息探测"><a href="#消息探测" class="headerlink" title="消息探测"></a>消息探测</h3><p>适用于阻塞与非阻塞<br> MPI_Probe()和MPI_Iprobe()函数探测接收消息的内容。用户根据探测到的消息内容决定如何接收这些消息，如根据消息大小分配缓冲区等。前者为阻塞方式,即只有探测到匹配的消息才返回;后者为非阻塞,即无论探测到与否均立即返回.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">int MPI_Probe(int source, int tag, MPI_Comm comm, MPI_Status* status)</div><div class="line">int MPI_Iprobe(int source, int tag, MPI_Comm comm, int*flag, MPI_Status* status)</div><div class="line">/**</div><div class="line">`IN source 数据源的rank，可以是MPI_ANY_SOURCE</div><div class="line">`IN tag 数据标签，可以是MPI_ANY_TAG</div><div class="line">`IN comm 通信空间/通信子</div><div class="line">`OUT flag 布尔值，表示探测到与否(只用于非阻塞方式)</div><div class="line">`OUT status status对象，包含探测到消息的内容</div><div class="line">*/</div><div class="line"></div><div class="line">int x;</div><div class="line">float y;</div><div class="line">MPI_Comm_rank(comm, &amp;rank);</div><div class="line">if(rank == 0)&#123;          /*0-&gt;2发送一int型数*/</div><div class="line">    MPI_Send(100, 1, MPI_INT, 2, 99, comm);</div><div class="line">&#125;else if(rank == 1)&#123;   /*1-&gt;2发送一float型数*/</div><div class="line">    MPI_Send(100.0, 1, MPI_FLOAT, 2, 99, comm);</div><div class="line">&#125;else&#123;                 /* 根进程接收 */</div><div class="line">    for(int i=0; i&lt;2; i++) &#123;</div><div class="line">        MPI_Probe(MPI_ANY_SOURCE, 0, comm, &amp;status);/*Blocking*/</div><div class="line">        if (status.MPI_SOURCE == 0)</div><div class="line">            MPI_Recv(&amp;x, 1, MPI_INT, 0, 99, &amp;status);</div><div class="line">        else if(status.MPI_SOURCE == 1)</div><div class="line">            MPI_Recv(&amp;y, 1, MPI_FLOAT, 0, 99, &amp;status);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="MPI程序的编译"><a href="#MPI程序的编译" class="headerlink" title="MPI程序的编译"></a>MPI程序的编译</h2><h3 id="基本执行方法"><a href="#基本执行方法" class="headerlink" title="基本执行方法"></a>基本执行方法</h3><p>用<code>mpicc</code>来进行编译的时候，和用gcc编译一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/*编译*/</div><div class="line">mpicc -c foo.c</div><div class="line">mpicc -o foo foo.c</div><div class="line">/*运行*/</div><div class="line">mpirun -np 4 foo</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="通过配置文件执行"><a href="#通过配置文件执行" class="headerlink" title="通过配置文件执行"></a>通过配置文件执行</h3><p>我们可以设定配置文件来表达各个进程的分布设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/*运行方式*/</div><div class="line">mpirun –p4pg &lt;pgfile&gt; &lt;program&gt;</div><div class="line">/*&lt;pgfile&gt;是配置文件*/</div><div class="line"></div><div class="line">/*配置文件的格式为</div><div class="line">*&lt;机器名&gt; &lt;进程数&gt; &lt;程序名&gt;</div><div class="line">*&lt;机器名&gt; &lt;进程数&gt; &lt;程序名&gt;</div><div class="line">*&lt;机器名&gt; &lt;进程数&gt; &lt;程序名&gt;</div><div class="line">**/</div><div class="line">node0 0 /public0/czn/mpi/cpi </div><div class="line">node1 1 /public0/czn/mpi/cpi</div><div class="line">node2 1 /public0/czn/mpi/cpi</div><div class="line">/*第一行的0并不表示在node0上没有进程，这里的0特指在node0上启动MPI程序*/</div></pre></td></tr></table></figure></p>
+<p>这种方式允许可执行程序由不同的名字和不同的路径组成</p>
+<hr>
+<h3 id="完整的MPI运行方式"><a href="#完整的MPI运行方式" class="headerlink" title="完整的MPI运行方式"></a>完整的MPI运行方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mpirun –np &lt;number of processor&gt; &lt;programname and argument&gt;</div><div class="line">mpirun [mpirun_options] &lt;program&gt; [options…]</div><div class="line">/*详细参数信息执行mpirun -help*/</div></pre></td></tr></table></figure>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/05/30/Hadoop的Linux配置事项/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/05/30/centos7下运行mpi链接超时/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/water.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Mr.車's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        2453010639@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">8</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Hadoop/">Hadoop<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/编程/">编程<span class="sidebar_archives-count">6</span></a>
+            </ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.svg);">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.svg);">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.svg);">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Dragon
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#FFFFFF'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FFFFFF, 0 0 15px #FFFFFF'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FFFFFF',
+        'border-left-color': '#FFFFFF'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 100);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
